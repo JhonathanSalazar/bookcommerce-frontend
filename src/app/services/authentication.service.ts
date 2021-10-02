@@ -11,7 +11,7 @@ const API_URL = `${environment.BASE_URL}/api/authentication/`
   providedIn: 'root'
 })
 export class AuthenticationService {
-  public currentUSer: Observable<User>
+  public currentUser: Observable<User>
   private currentUserSubjet: BehaviorSubject<User>
 
   constructor(private http: HttpClient) {
@@ -23,7 +23,7 @@ export class AuthenticationService {
     }
 
     this.currentUserSubjet = new BehaviorSubject<User>(storageUser)
-    this.currentUSer = this.currentUserSubjet.asObservable()
+    this.currentUser = this.currentUserSubjet.asObservable()
   }
 
   public get currentUserValue(): User {
@@ -43,6 +43,7 @@ export class AuthenticationService {
   }
 
   register(user: User): Observable<any> {
+    console.log(API_URL)
     return this.http.post(API_URL + 'sign-up', user)
   }
 

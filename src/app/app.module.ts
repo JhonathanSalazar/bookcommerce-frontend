@@ -10,6 +10,7 @@ import {AdminComponent} from './admin/admin/admin.component';
 import {NotFoundComponent} from './error/not-found/not-found.component';
 import {UnathorizedComponent} from './error/unathorized/unathorized.component';
 import {HttpClientModule} from "@angular/common/http";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {HttpClientModule} from "@angular/common/http";
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

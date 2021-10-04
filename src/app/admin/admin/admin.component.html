@@ -1,5 +1,10 @@
 <div class="container">
   <div class="pt-5">
+
+    <div class="alert alert-danger" *ngIf="errorMessage">
+      {{errorMessage}}
+    </div>
+
     <div class="card">
       <div class="card-header">
         <div class="row">
@@ -25,14 +30,14 @@
           </thead>
           <tbody>
           <tr *ngFor="let item of bookList; index as ind">
-            <th scope="row">{{ind + 1}}</th>
+            <th scope="row">{{item.id}}</th>
             <td>{{item.title}}</td>
             <td>{{item.price | currency:'USD'}}</td>
             <td>{{item.author}}</td>
             <td>{{item.createTime | date: 'medium'}}</td>
             <td>
-              <button class="btn btn-primary me-1">Edit</button>
-              <button class="btn btn-danger">Delete</button>
+              <button class="btn btn-primary me-1" (click)="editBookRequest(item)">Edit</button>
+              <button class="btn btn-danger" (click)="deleteBook(item, ind)">Delete</button>
             </td>
           </tr>
           </tbody>
@@ -42,4 +47,7 @@
   </div>
 </div>
 
-<app-book (save)="saveBookWatcher($event)"></app-book>
+<app-book
+  [book]="selectedBook"
+  (save)="saveBookWatcher($event)"
+></app-book>

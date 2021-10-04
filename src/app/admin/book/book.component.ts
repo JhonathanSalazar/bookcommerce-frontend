@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Book} from "../../models/book.model";
 import {BookService} from "../../services/book.service";
 
@@ -11,7 +11,7 @@ declare var $: any
 })
 export class BookComponent {
 
-  book: Book = new Book()
+  @Input() book: Book = new Book()
   errorMessage: string = ""
 
   @Output() save = new EventEmitter<any>()

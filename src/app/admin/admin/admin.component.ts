@@ -11,6 +11,8 @@ import {BookComponent} from "../book/book.component";
 export class AdminComponent implements OnInit {
 
   bookList: Array<Book> = []
+  selectedBook: Book = new Book()
+  errorMessage: string = ""
 
   @ViewChild(BookComponent) child: BookComponent | undefined
 
@@ -24,10 +26,30 @@ export class AdminComponent implements OnInit {
   }
 
   createBookRequest() {
+    this.selectedBook = new Book()
     this.child?.showBookModal()
   }
 
   saveBookWatcher(book: Book) {
-    this.bookList.push(book)
+    let itemIndex = this.bookList.findIndex(item => item.id === book.id)
+    if (itemIndex !== -1) {
+      this.bookList[itemIndex] = book
+    } else {
+      this.bookList.push(book)
+    }
+  }
+
+  editBookRequest(item: Book) {
+    this.selectedBook = Object.assign({}, item)
+    this.child?.showBookModal()
+  }
+
+  deleteBook(item: Book, ind: number) {
+    this.bookService.deleteBook(item).subscribe(data => {
+      this.bookList.splice(ind, 1)
+    }, err => {
+      this.errorMessage = 'Unexpected error occurred.'
+      console.log(err)
+    })
   }
 }

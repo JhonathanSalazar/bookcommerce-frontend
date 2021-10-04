@@ -1,0 +1,8 @@
+{
+  "name": "Book Commerce",
+  "build": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}

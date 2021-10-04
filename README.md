@@ -1,27 +1,42 @@
-# BookcommerceFrontend
+# Book Commerce Project 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.7.
+A basic book commerce project with the following feature:
+1. User sign-up and sign-in.
+2. Books management (create, edit, delete).
+3. Book seller.
 
-## Development server
+Features are enabled with roles based (Users, Admin).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+The project consume an own-api project that you can see in [book-commerce-backend](https://github.com/JhonathanAlfonso/bookcommerce-backend), in this project are enabled the available end-points.
 
-## Code scaffolding
+Project url: https://book-commerce.herokuapp.com/home
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Bootstrap users
 
-## Build
+### User
+```
+  user: alfonso
+  password: alfonso
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Admin
+```
+  user: admin
+  password: admin
+```
 
-## Running unit tests
+## Project Screenshots
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Home and Profile (Guests, Users)
 
-## Running end-to-end tests
+![Home](./src/assets/images/sign-in.png)
+![Sign-Up](./src/assets/images/sign-up.png)
+![Sign-In](./src/assets/images/home.png)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Admin (Admins)
+![Admin](./src/assets/images/admin.png)
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+

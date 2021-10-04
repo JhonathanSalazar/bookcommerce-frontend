@@ -7,6 +7,8 @@ import {ProfileComponent} from "./user/profile/profile.component";
 import {AdminComponent} from "./admin/admin/admin.component";
 import {NotFoundComponent} from "./error/not-found/not-found.component";
 import {UnathorizedComponent} from "./error/unathorized/unathorized.component";
+import {AuthGuard} from "./guards/auth-guard.service";
+import {Role} from "./models/role.enum";
 
 const routes: Routes = [
   {path: '', redirectTo: "home", pathMatch: 'full'},
@@ -15,9 +17,17 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
 
-  {path: 'profile', component: ProfileComponent},
+  {
+    path: 'profile', component: ProfileComponent,
+    canActivate: [AuthGuard],
+    data: {roles: [Role.ADMIN, Role.USER]}
+  },
 
-  {path: 'admin', component: AdminComponent},
+  {
+    path: 'admin', component: AdminComponent,
+    canActivate: [AuthGuard],
+    data: {roles: [Role.ADMIN]}
+  },
 
   {path: '404', component: NotFoundComponent},
   {path: '401', component: UnathorizedComponent}

@@ -13,6 +13,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
 import { BookComponent } from './admin/book/book.component';
 import {HomeComponent} from "./guest/home/home.component";
+import {ProfileComponent} from "./user/profile/profile.component";
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import {HomeComponent} from "./guest/home/home.component";
     RegisterComponent,
     AdminComponent,
     HomeComponent,
+    ProfileComponent,
     NotFoundComponent,
     UnathorizedComponent,
     BookComponent

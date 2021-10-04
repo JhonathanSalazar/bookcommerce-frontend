@@ -12,6 +12,7 @@ import {UnathorizedComponent} from './error/unathorized/unathorized.component';
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
 import { BookComponent } from './admin/book/book.component';
+import {HomeComponent} from "./guest/home/home.component";
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { BookComponent } from './admin/book/book.component';
     LoginComponent,
     RegisterComponent,
     AdminComponent,
+    HomeComponent,
     NotFoundComponent,
     UnathorizedComponent,
     BookComponent

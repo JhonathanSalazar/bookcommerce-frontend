@@ -11,7 +11,7 @@ const targetPath = isProduction
 const envFileContent = `
   export const environment = {
   production: ${isProduction},
-  BASE_URL: "${process.env.BASE_URL}'
+  BASE_URL: "${process.env.BASE_URL}"
 };
 `
 
